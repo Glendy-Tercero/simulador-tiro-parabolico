@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://d3sa8gb5cdobs"]
+
+[ext_resource type="Script" uid="uid://vchmeyv4eh1n" path="res://main/main.gd" id="1_grrlh"]
+[ext_resource type="Texture2D" uid="uid://cfpopu2e6uel1" path="res://images/fondo.jpg" id="1_kfbq2"]
+[ext_resource type="FontFile" uid="uid://bhlraixkxu0nm" path="res://fonts/gerasol/GERASOL.ttf" id="2_4dugh"]
+[ext_resource type="FontFile" uid="uid://ba0obbrhjbs6h" path="res://fonts/gohan_2/Gohan.ttf" id="3_67ri8"]
+[ext_resource type="FontFile" uid="uid://c168tdxvfehj3" path="res://fonts/arena_of_god/ArenaOfGod-Regular.otf" id="4_grrlh"]
+[ext_resource type="Script" uid="uid://byeqejh7knuqw" path="res://main/btn_entrar.gd" id="5_0i4oc"]
+[ext_resource type="Script" uid="uid://dnduo8bvn1san" path="res://main/btn_salir.gd" id="6_bsumw"]
+[ext_resource type="Texture2D" uid="uid://oggiwthyicl6" path="res://images/volumen.png" id="8_67ri8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqd7i"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luytp"]
+bg_color = Color(0, 0.7008032, 0.5399377, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o80qs"]
+bg_color = Color(0, 0.7019608, 0.5411765, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtrhv"]
+bg_color = Color(0, 0.36273098, 0.29133713, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otrg7"]
+bg_color = Color(0.9816753, 0.363833, 0.31805938, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0h8po"]
+bg_color = Color(0.98039216, 0.3647059, 0.31764707, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tv7ag"]
+bg_color = Color(0.43827727, 0, 0.089494534, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Control" type="Control" unique_id=972331925]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+script = ExtResource("1_grrlh")
+
+[node name="fondo" type="Sprite2D" parent="." unique_id=429157432]
+position = Vector2(960, 488)
+scale = Vector2(0.64000005, 0.59625)
+texture = ExtResource("1_kfbq2")
+
+[node name="panelFondo" type="Panel" parent="." unique_id=1830801818]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="labelTitulo" type="Label" parent="." unique_id=384137967]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 156.0
+offset_right = 1856.0
+offset_bottom = 234.0
+theme_override_fonts/font = ExtResource("2_4dugh")
+theme_override_font_sizes/font_size = 80
+text = "SIMULADOR DE TIRO PARABÓLICO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="labelNombre" type="Label" parent="." unique_id=1372740133]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 884.0
+offset_right = 1344.0
+offset_bottom = 939.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.64705884)
+theme_override_fonts/font = ExtResource("3_67ri8")
+theme_override_font_sizes/font_size = 26
+text = "Desarrollado por: Glendy Paola Tercero López"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="panelBotones" type="Panel" parent="." unique_id=673376745]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 352.0
+offset_right = 1176.0
+offset_bottom = 736.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yqd7i")
+
+[node name="btnEntrar" type="Button" parent="panelBotones" unique_id=1186147511]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 72.0
+offset_right = 332.0
+offset_bottom = 162.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_grrlh")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_luytp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o80qs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qtrhv")
+text = "Entrar"
+script = ExtResource("5_0i4oc")
+
+[node name="btnSalir" type="Button" parent="panelBotones" unique_id=2034000969]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 224.0
+offset_right = 332.0
+offset_bottom = 314.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_grrlh")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_otrg7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0h8po")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tv7ag")
+text = "Salir"
+script = ExtResource("6_bsumw")
+
+[node name="volumen" type="Sprite2D" parent="." unique_id=1315995685]
+position = Vector2(48, 1032)
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("8_67ri8")
+
+[node name="sliderVolumen" type="HSlider" parent="." unique_id=1678165491]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 1024.0
+offset_right = 192.0
+offset_bottom = 1040.0
+mouse_default_cursor_shape = 2
+max_value = 50.0
+step = 0.01
+value = 25.0
+
+[connection signal="pressed" from="panelBotones/btnEntrar" to="panelBotones/btnEntrar" method="_on_pressed"]
+[connection signal="pressed" from="panelBotones/btnSalir" to="panelBotones/btnSalir" method="_on_pressed"]

@@ -1,0 +1,1318 @@
+[gd_scene format=3 uid="uid://cv3tctrxme7n3"]
+
+[ext_resource type="Script" uid="uid://hnpmgkayj05f" path="res://simulador/control.gd" id="1_d70ai"]
+[ext_resource type="Texture2D" uid="uid://f5vy82kw1uhn" path="res://images/Ciudad.png" id="1_lroad"]
+[ext_resource type="Texture2D" uid="uid://cwg6xbcdnlcjp" path="res://images/suelo.png" id="3_2i0ye"]
+[ext_resource type="FontFile" uid="uid://ba0obbrhjbs6h" path="res://fonts/gohan_2/Gohan.ttf" id="3_23q5a"]
+[ext_resource type="Script" uid="uid://ds2ywqg0xmpte" path="res://collisions/static_suelo.gd" id="3_daijk"]
+[ext_resource type="FontFile" uid="uid://bhlraixkxu0nm" path="res://fonts/gerasol/GERASOL.ttf" id="4_23q5a"]
+[ext_resource type="Texture2D" uid="uid://bu83lw8mmrpnw" path="res://images/brazo_iz.png" id="4_55go0"]
+[ext_resource type="FontFile" uid="uid://cy0dr3cssjvcn" path="res://fonts/arena_of_god/ArenaOfGod-Regular.ttf" id="4_g8e41"]
+[ext_resource type="Texture2D" uid="uid://b7xyneuxovfkt" path="res://images/torso.png" id="4_k36xd"]
+[ext_resource type="Texture2D" uid="uid://cavo2shqfpj8w" path="res://images/brazo_de.png" id="5_k36xd"]
+[ext_resource type="Script" uid="uid://bolw2okf6f5h8" path="res://simulador/btn_regresar.gd" id="5_v43sv"]
+[ext_resource type="Texture2D" uid="uid://crjhjlkucp20v" path="res://images/sombra.png" id="5_xu8dj"]
+[ext_resource type="Texture2D" uid="uid://f1mwpcahf803" path="res://images/muro.png" id="6_4cvkg"]
+[ext_resource type="Script" uid="uid://c8vb3qt01bx8s" path="res://collisions/patada.gd" id="7_d70ai"]
+[ext_resource type="Texture2D" uid="uid://c4l7quw7anevx" path="res://images/pierna_de.png" id="7_o02do"]
+[ext_resource type="Texture2D" uid="uid://4pcxmhehx5n1" path="res://images/pierna_iz.png" id="8_d70ai"]
+[ext_resource type="Script" uid="uid://b7wng7eg5agnp" path="res://simulador/btn_quitar.gd" id="9_4pqs5"]
+[ext_resource type="Script" uid="uid://rwnxsl7ydq87" path="res://simulador/btn_obstaculo.gd" id="9_cxko2"]
+[ext_resource type="Texture2D" uid="uid://cptt0yfn6yaid" path="res://images/pelota.png" id="9_lpohk"]
+[ext_resource type="FontFile" uid="uid://c168tdxvfehj3" path="res://fonts/arena_of_god/ArenaOfGod-Regular.otf" id="10_cxko2"]
+[ext_resource type="Script" uid="uid://0dvggexnwbji" path="res://collisions/pelota.gd" id="12_5fp6u"]
+[ext_resource type="Script" uid="uid://c7b1g7ov8irl1" path="res://obstacle/btn_agregar.gd" id="12_gtxfl"]
+[ext_resource type="Script" uid="uid://d0punqt0dwdou" path="res://obstacle/btn_cancelar.gd" id="13_c2iri"]
+[ext_resource type="Script" uid="uid://bj44lmqjwqo3n" path="res://simulador/btn_calcular.gd" id="17_dg7ac"]
+[ext_resource type="Script" uid="uid://cy21s4a4uomcr" path="res://simulador/btn_reiniciar.gd" id="19_tocqe"]
+[ext_resource type="Script" uid="uid://dspu2uysdbjw0" path="res://simulador/resultados.gd" id="23_6k6cw"]
+[ext_resource type="Script" uid="uid://dhi8tt2svusjj" path="res://simulador/btn_aceptar.gd" id="24_nfnes"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55go0"]
+size = Vector2(14718.918, 72.97268)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cxko2"]
+points = PackedVector2Array(82.51228, -56.68567, 116.36351, -23.771362, -16.925781, 27.428467, -42.31421, 53.028442, -57.124123, 53.028442, -67.702484, 43.885742, -67.702484, -9.142822, -59.23977, -18.285767, -16.92572, -18.285767)
+
+[sub_resource type="Animation" id="Animation_o02do"]
+length = 0.43
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("torso:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6.066128, 5.485718)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("brazoIz:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7.8636513, 2.7428155)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("brazoDe:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.305725, 11.199707)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("brazoDe:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("brazoIz:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("areaPierna:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6.347519, 5.486614)]
+}
+
+[sub_resource type="Animation" id="Animation_55go0"]
+resource_name = "animationJugador"
+length = 2.0
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("torso:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6.066128, 5.485718), Vector2(4.2313848, 12.800028)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("brazoIz:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(7.8636513, 2.7428155), Vector2(-4, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("brazoDe:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.305725, 11.199707), Vector2(4.231377, 9.142899)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("brazoDe:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.08726646259971647]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("brazoIz:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.05235987755982989]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("areaPierna:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6.347, 5.486), Vector2(5.607, 15.488)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("areaPierna:rotation")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.05235987755982989]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o02do"]
+_data = {
+&"RESET": SubResource("Animation_o02do"),
+&"animationReposo": SubResource("Animation_55go0")
+}
+
+[sub_resource type="Animation" id="Animation_5fp6u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("torso:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.2351317, 12.78509)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("brazoDe:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.228659, 9.148938)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("brazoIz:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3.975771, 0.0056016445)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("piernaIz:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.2893066, 5.4857244)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("torso:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("brazoDe:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("brazoDe:skew")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("brazoIz:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.027789276]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("brazoIz:skew")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("piernaIz:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("piernaIz:skew")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("areaPierna:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8.503967, 9.283347)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("sombra:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-16.92566, 239.54272)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("sombra:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.1157022, 2.298775)]
+}
+
+[sub_resource type="Animation" id="Animation_d70ai"]
+resource_name = "animationPatada"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("torso:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(6.066, 5.486), Vector2(4.235, -1.462), Vector2(6.066, 5.486)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("brazoDe:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3.306, 11.2), Vector2(-103.306, -10.153), Vector2(3.306, 11.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("brazoIz:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(7.864, 2.743), Vector2(-44.864, -49.743), Vector2(7.864, 2.743)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("piernaIz:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5.2893066, 5.4857244), Vector2(-8.289, 62.486), Vector2(5.2893066, 5.4857244)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("torso:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.17453292519943295, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("brazoDe:rotation")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5235987755982988, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("brazoIz:rotation")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(-0.010000002, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.4363323129985824, 0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("brazoDe:skew")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.17453292519943295, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("brazoIz:skew")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.17453292519943295, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("piernaIz:rotation")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.3, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.3962634015954636, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("piernaIz:skew")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.3, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.08726646259971647, 0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("areaPierna:position")
+tracks/11/interp = 2
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(6.347, 5.486), Vector2(-63.347, 5.486), Vector2(6.347, 5.486)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("areaPierna:rotation")
+tracks/12/interp = 2
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -2.0943951023931953, 0.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("areaPierna:skew")
+tracks/13/interp = 2
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.08726646259971647, 0.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("sombra:position")
+tracks/14/interp = 2
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-16.92566, 239.54272), Vector2(-67.702515, 239.54272), Vector2(-3.8146973e-05, 239.54272), Vector2(-16.92566, 239.54272)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("sombra:scale")
+tracks/15/interp = 2
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.1157022, 2.298775), Vector2(1.516, 1.648), Vector2(2.1157022, 2.298775), Vector2(2.1157022, 2.298775)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fp6u"]
+_data = {
+&"RESET": SubResource("Animation_5fp6u"),
+&"animationPatada": SubResource("Animation_d70ai")
+}
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_lpohk"]
+points = PackedVector2Array(31, 103, 48, -45, 69, -49, 21, -97, 0, -93, 0, 71)
+
+[sub_resource type="Gradient" id="Gradient_o02do"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.50980395)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_daijk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lpohk"]
+radius = 127.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apdi8"]
+bg_color = Color(0.039215688, 0.4862745, 0.56078434, 1)
+border_color = Color(0.039215688, 0.4862745, 0.56078434, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ue1gd"]
+bg_color = Color(3.5616756e-06, 0.7101644, 0.44982815, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtxfl"]
+bg_color = Color(0, 0.70980394, 0.4509804, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2iri"]
+bg_color = Color(0, 0.36078432, 0.2901961, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg7ac"]
+bg_color = Color(0, 0.36078432, 0.2901961, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8e41"]
+bg_color = Color(0.058962703, 0.6105763, 0.7022746, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwaq5"]
+bg_color = Color(0.05882353, 0.6117647, 0.7019608, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k36xd"]
+bg_color = Color(0.015686275, 0.30980393, 0.36078432, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55go0"]
+bg_color = Color(0.015686275, 0.30980393, 0.36078432, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v43sv"]
+bg_color = Color(0.98039216, 0.3647059, 0.31764707, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rly34"]
+bg_color = Color(0.98039216, 0.3647059, 0.31764707, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrbn5"]
+bg_color = Color(0.4392157, 0, 0.09019608, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wt23r"]
+bg_color = Color(0.4392157, 0, 0.09019608, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpohk"]
+bg_color = Color(0.05882353, 0.6117647, 0.7019608, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pqs5"]
+bg_color = Color(0.05882353, 0.6117647, 0.7019608, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xj186"]
+bg_color = Color(0.015686275, 0.30980393, 0.36078432, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fp6u"]
+bg_color = Color(0.015686275, 0.30980393, 0.36078432, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxko2"]
+bg_color = Color(0.98039216, 0.3647059, 0.31764707, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43vje"]
+bg_color = Color(0.98039216, 0.3647059, 0.31764707, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o02do"]
+bg_color = Color(0.4392157, 0, 0.09019608, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d70ai"]
+bg_color = Color(0.4392157, 0, 0.09019608, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_daijk"]
+bg_color = Color(9.62615e-07, 0.3143082, 0.39490134, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tocqe"]
+bg_color = Color(0.9647059, 0.9764706, 0.972549, 0.16862746)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfnes"]
+bg_color = Color(0.9955804, 0.99558026, 0.99558026, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6k6cw"]
+bg_color = Color(0, 0.7008032, 0.5399377, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xu8dj"]
+bg_color = Color(0, 0.7019608, 0.5411765, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gligv"]
+bg_color = Color(0, 0.36273098, 0.29133713, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50ggl"]
+bg_color = Color(0.9816753, 0.363833, 0.31805938, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm5od"]
+bg_color = Color(0.98039216, 0.3647059, 0.31764707, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlvo1"]
+bg_color = Color(0.43827727, 0, 0.089494534, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Control" type="Control" unique_id=198488431]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+script = ExtResource("1_d70ai")
+
+[node name="parallaxFondo" type="ParallaxBackground" parent="." unique_id=324943857]
+
+[node name="parallaxCiudad" type="ParallaxLayer" parent="parallaxFondo" unique_id=1388785950]
+texture_repeat = 3
+motion_mirroring = Vector2(1920, 0)
+
+[node name="ciudad" type="Sprite2D" parent="parallaxFondo/parallaxCiudad" unique_id=1161721678]
+texture_repeat = 3
+position = Vector2(960.00006, 409.00006)
+scale = Vector2(0.5818182, 0.52904755)
+texture = ExtResource("1_lroad")
+
+[node name="staticSuelo" type="StaticBody2D" parent="." unique_id=871207488]
+z_index = -1
+position = Vector2(960, 1072)
+script = ExtResource("3_daijk")
+
+[node name="suelo" type="Sprite2D" parent="staticSuelo" unique_id=2144328176]
+texture_repeat = 3
+position = Vector2(0.12506104, -179.00006)
+scale = Vector2(0.26048166, 0.21794888)
+texture = ExtResource("3_2i0ye")
+
+[node name="collisionSuelo" type="CollisionShape2D" parent="staticSuelo" unique_id=1811633439]
+position = Vector2(960, -0.00024414063)
+scale = Vector2(0.26088873, 0.21925995)
+shape = SubResource("RectangleShape2D_55go0")
+
+[node name="jugador" type="CharacterBody2D" parent="." unique_id=1029607376]
+position = Vector2(152.00002, 925.00006)
+scale = Vector2(0.47265628, 0.546875)
+
+[node name="sombra" type="Sprite2D" parent="jugador" unique_id=679545109]
+modulate = Color(1, 1, 1, 0.4745098)
+position = Vector2(-16.92566, 239.54272)
+scale = Vector2(2.1157022, 2.298775)
+texture = ExtResource("5_xu8dj")
+
+[node name="brazoIz" type="Sprite2D" parent="jugador" unique_id=1649537540]
+position = Vector2(-3.975771, 0.0056016445)
+rotation = 0.027789276
+scale = Vector2(1.0106049, 0.96071434)
+texture = ExtResource("4_55go0")
+
+[node name="piernaIz" type="Sprite2D" parent="jugador" unique_id=1100034206]
+position = Vector2(5.2893066, 5.4857244)
+scale = Vector2(1.0454544, 0.9785712)
+texture = ExtResource("8_d70ai")
+
+[node name="torso" type="Sprite2D" parent="jugador" unique_id=431540191]
+position = Vector2(4.2351317, 12.78509)
+scale = Vector2(1.0341552, 0.97310287)
+texture = ExtResource("4_k36xd")
+
+[node name="areaPierna" type="Area2D" parent="jugador" unique_id=458162025]
+position = Vector2(8.503967, 9.283347)
+scale = Vector2(0.9999999, 0.99999994)
+script = ExtResource("7_d70ai")
+
+[node name="piernaDe" type="Sprite2D" parent="jugador/areaPierna" unique_id=1439645158]
+position = Vector2(0.00010681152, -7.247925e-05)
+scale = Vector2(1.0330571, 0.992857)
+texture = ExtResource("7_o02do")
+
+[node name="collisionJugador" type="CollisionShape2D" parent="jugador/areaPierna" unique_id=2099901455]
+position = Vector2(-196.7633, 138.97018)
+rotation = 0.001562982
+scale = Vector2(0.99999934, 0.9999995)
+shape = SubResource("ConvexPolygonShape2D_cxko2")
+
+[node name="brazoDe" type="Sprite2D" parent="jugador" unique_id=216361022]
+position = Vector2(4.228659, 9.148938)
+scale = Vector2(1.0118798, 1.022321)
+texture = ExtResource("5_k36xd")
+
+[node name="animationReposo" type="AnimationPlayer" parent="jugador" unique_id=758595633]
+libraries/ = SubResource("AnimationLibrary_o02do")
+autoplay = &"animationReposo"
+
+[node name="animationPatada" type="AnimationPlayer" parent="jugador" unique_id=105788921]
+libraries/ = SubResource("AnimationLibrary_5fp6u")
+
+[node name="stacticMuro" type="StaticBody2D" parent="." unique_id=435358279]
+visible = false
+z_index = -1
+position = Vector2(416, 993.5)
+
+[node name="muro" type="Sprite2D" parent="stacticMuro" unique_id=1071976644]
+position = Vector2(14.08, -14.297)
+scale = Vector2(0.17106707, 0.29925767)
+texture = ExtResource("6_4cvkg")
+
+[node name="collisionMuro" type="CollisionShape2D" parent="stacticMuro" unique_id=361781519]
+shape = SubResource("ConvexPolygonShape2D_lpohk")
+disabled = true
+
+[node name="cameraPelota" type="Camera2D" parent="." unique_id=965759427]
+position = Vector2(960, 540)
+limit_left = 0
+drag_horizontal_enabled = true
+
+[node name="lineEstela" type="Line2D" parent="." unique_id=1231252541]
+z_index = -1
+points = PackedVector2Array(-2, 2)
+width = 30.0
+default_color = Color(1, 1, 1, 0)
+gradient = SubResource("Gradient_o02do")
+
+[node name="rigidPelota" type="RigidBody2D" parent="." unique_id=323720981]
+position = Vector2(248, 1032)
+physics_material_override = SubResource("PhysicsMaterial_daijk")
+continuous_cd = 1
+script = ExtResource("12_5fp6u")
+
+[node name="pelota" type="Sprite2D" parent="rigidPelota" unique_id=119469179]
+position = Vector2(1.5258789e-05, 0)
+scale = Vector2(0.24218754, 0.25000012)
+texture = ExtResource("9_lpohk")
+
+[node name="collisionPelota" type="CollisionShape2D" parent="rigidPelota" unique_id=1837077641]
+position = Vector2(1.5258789e-05, 0)
+scale = Vector2(0.24218754, 0.25000012)
+shape = SubResource("CircleShape2D_lpohk")
+
+[node name="canvasDatos" type="CanvasLayer" parent="." unique_id=2002994790]
+
+[node name="panelDatos" type="Panel" parent="canvasDatos" unique_id=980462827]
+offset_left = 1527.0
+offset_right = 1924.0
+offset_bottom = 1080.0
+
+[node name="labelTitulo" type="Label" parent="canvasDatos/panelDatos" unique_id=184111039]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 45.0
+offset_right = 384.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("4_23q5a")
+theme_override_font_sizes/font_size = 50
+text = "DATOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="labelAngulo" type="Label" parent="canvasDatos/panelDatos" unique_id=1575989310]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 169.0
+offset_right = 113.0
+offset_bottom = 191.0
+theme_override_fonts/font = ExtResource("3_23q5a")
+theme_override_font_sizes/font_size = 20
+text = "Ángulo"
+
+[node name="spinBoxAngulo" type="SpinBox" parent="canvasDatos/panelDatos" unique_id=258371376]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 154.0
+offset_right = 373.0
+offset_bottom = 200.0
+theme_override_styles/field_and_buttons_separator = SubResource("StyleBoxFlat_apdi8")
+min_value = 5.0
+max_value = 85.0
+value = 5.0
+
+[node name="labelVO" type="Label" parent="canvasDatos/panelDatos" unique_id=2001694727]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 251.0
+offset_right = 137.0
+offset_bottom = 294.0
+theme_override_fonts/font = ExtResource("3_23q5a")
+theme_override_font_sizes/font_size = 20
+text = "Velocidad
+Inicial"
+
+[node name="spinBoxVO" type="SpinBox" parent="canvasDatos/panelDatos" unique_id=813964209]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 248.0
+offset_right = 373.0
+offset_bottom = 294.0
+theme_override_styles/field_and_buttons_separator = SubResource("StyleBoxFlat_apdi8")
+min_value = 5.0
+max_value = 60.0
+value = 5.0
+
+[node name="btnCalcular" type="Button" parent="canvasDatos/panelDatos" unique_id=637824587]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 357.0
+offset_right = 347.0
+offset_bottom = 417.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.08855977, 0.08855999, 0.088559784, 1)
+theme_override_colors/font_disabled_color = Color(0.37254903, 0.37254903, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("4_g8e41")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ue1gd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gtxfl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c2iri")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_dg7ac")
+text = "Calcular"
+script = ExtResource("17_dg7ac")
+
+[node name="btnReiniciar" type="Button" parent="canvasDatos/panelDatos" unique_id=1613899092]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 573.0
+offset_right = 347.0
+offset_bottom = 633.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.08855977, 0.08855999, 0.088559784, 1)
+theme_override_colors/font_disabled_color = Color(0.3741394, 0.37413922, 0.37413916, 1)
+theme_override_fonts/font = ExtResource("4_g8e41")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_g8e41")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nwaq5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k36xd")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_55go0")
+text = "Reiniciar"
+script = ExtResource("19_tocqe")
+
+[node name="btnQuitar" type="Button" parent="canvasDatos/panelDatos" unique_id=1606399036]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 466.0
+offset_right = 350.0
+offset_bottom = 526.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.08855977, 0.08855999, 0.088559784, 1)
+theme_override_colors/font_disabled_color = Color(0.37254903, 0.37254903, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("4_g8e41")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_v43sv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rly34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jrbn5")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_wt23r")
+text = "Quitar Obstaculo"
+script = ExtResource("9_4pqs5")
+
+[node name="btnObstaculo" type="Button" parent="canvasDatos/panelDatos" unique_id=1441621608]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 466.0
+offset_right = 347.0
+offset_bottom = 526.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.08855977, 0.08855999, 0.088559784, 1)
+theme_override_colors/font_disabled_color = Color(0.37254903, 0.37254903, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("4_g8e41")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_lpohk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4pqs5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xj186")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5fp6u")
+text = "Agregar Obstaculo"
+script = ExtResource("9_cxko2")
+
+[node name="btnRegresar" type="Button" parent="canvasDatos/panelDatos" unique_id=64410572]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 979.0
+offset_right = 347.0
+offset_bottom = 1039.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.08855977, 0.08855999, 0.088559784, 1)
+theme_override_colors/font_disabled_color = Color(0.37254903, 0.37254903, 0.37254903, 1)
+theme_override_fonts/font = ExtResource("4_g8e41")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_cxko2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_43vje")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o02do")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_d70ai")
+text = "Regresar
+"
+script = ExtResource("5_v43sv")
+
+[node name="canvasResultados" type="CanvasLayer" parent="." unique_id=269116385]
+visible = false
+
+[node name="panelResultados" type="Panel" parent="canvasResultados" unique_id=2128163453]
+offset_left = 610.0
+offset_top = 256.0
+offset_right = 1310.0
+offset_bottom = 828.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_daijk")
+script = ExtResource("23_6k6cw")
+
+[node name="labelResultados" type="Label" parent="canvasResultados/panelResultados" unique_id=1658947982]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 28.0
+offset_right = 671.0
+offset_bottom = 84.0
+theme_override_fonts/font = ExtResource("4_23q5a")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_tocqe")
+text = "RESULTADOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="labelAlcance" type="Label" parent="canvasResultados/panelResultados" unique_id=1227582173]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 116.0
+offset_right = 183.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("3_23q5a")
+theme_override_font_sizes/font_size = 20
+text = "Alcance: 0 m"
+
+[node name="labelAltura" type="Label" parent="canvasResultados/panelResultados" unique_id=482891232]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 116.0
+offset_right = 583.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("3_23q5a")
+theme_override_font_sizes/font_size = 20
+text = "Altura Maxima: 0 m"
+
+[node name="labelTiempo" type="Label" parent="canvasResultados/panelResultados" unique_id=77835044]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 169.0
+offset_right = 264.0
+offset_bottom = 203.0
+theme_override_fonts/font = ExtResource("3_23q5a")
+theme_override_font_sizes/font_size = 20
+text = "Tiempo de Vuelo: 0 s"
+
+[node name="labelVF" type="Label" parent="canvasResultados/panelResultados" unique_id=311559070]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 169.0
+offset_right = 617.0
+offset_bottom = 203.0
+theme_override_fonts/font = ExtResource("3_23q5a")
+theme_override_font_sizes/font_size = 20
+text = "Velocidad Final: 0 m/s"
+
+[node name="labelTrayectoria" type="Label" parent="canvasResultados/panelResultados" unique_id=391335364]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 223.0
+offset_right = 252.0
+offset_bottom = 257.0
+theme_override_fonts/font = ExtResource("3_23q5a")
+theme_override_font_sizes/font_size = 20
+text = "Trayectoria:"
+
+[node name="labelGolpe" type="Label" parent="canvasResultados/panelResultados" unique_id=1211683637]
+visible = false
+layout_mode = 0
+offset_left = 370.0
+offset_top = 221.0
+offset_right = 584.0
+offset_bottom = 255.0
+theme_override_colors/font_color = Color(0.12833196, 0.7999357, 0.9138464, 1)
+theme_override_fonts/font = ExtResource("3_23q5a")
+theme_override_font_sizes/font_size = 20
+text = "No golpeó el muro"
+
+[node name="panelTrayectoria" type="Panel" parent="canvasResultados/panelResultados" unique_id=1916744480]
+clip_contents = true
+layout_mode = 0
+offset_left = 38.0
+offset_top = 273.0
+offset_right = 662.0
+offset_bottom = 457.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nfnes")
+
+[node name="lineTrayectoria" type="Line2D" parent="canvasResultados/panelResultados/panelTrayectoria" unique_id=1604338674]
+top_level = true
+position = Vector2(0, 1.0000001)
+scale = Vector2(1.5064253, 1.3386737)
+points = PackedVector2Array(446.08917, 519.9176)
+width = 5.0
+default_color = Color(0.98294693, 0.47634757, 0.47631752, 1)
+
+[node name="btnAceptar" type="Button" parent="canvasResultados/panelResultados" unique_id=1095039335]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 488.0
+offset_right = 453.0
+offset_bottom = 538.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_cxko2")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_6k6cw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xu8dj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gligv")
+text = "Aceptar
+"
+script = ExtResource("24_nfnes")
+
+[node name="canvasObstaculo" type="CanvasLayer" parent="." unique_id=766946083]
+visible = false
+
+[node name="panelObstaculo" type="Panel" parent="canvasObstaculo" unique_id=1390547976]
+offset_left = 688.0
+offset_top = 304.0
+offset_right = 1234.0
+offset_bottom = 784.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_daijk")
+
+[node name="labelObstaculo" type="Label" parent="canvasObstaculo/panelObstaculo" unique_id=1548911808]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 24.0
+offset_right = 498.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("4_23q5a")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_tocqe")
+text = "Obstaculo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="labelAlturaO" type="Label" parent="canvasObstaculo/panelObstaculo" unique_id=1896146542]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 120.0
+offset_right = 284.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("3_23q5a")
+theme_override_font_sizes/font_size = 20
+text = "Altura del muro"
+
+[node name="spinBoxAltura" type="SpinBox" parent="canvasObstaculo/panelObstaculo" unique_id=262311653]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 156.0
+offset_right = 396.0
+offset_bottom = 206.0
+theme_override_styles/field_and_buttons_separator = SubResource("StyleBoxFlat_apdi8")
+min_value = 1.0
+max_value = 20.0
+value = 1.0
+
+[node name="labelDistancia" type="Label" parent="canvasObstaculo/panelObstaculo" unique_id=1202584390]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 240.0
+offset_right = 358.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("3_23q5a")
+theme_override_font_sizes/font_size = 20
+text = "Distancia del muro"
+
+[node name="spinBoxDistancia" type="SpinBox" parent="canvasObstaculo/panelObstaculo" unique_id=1658411531]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 276.0
+offset_right = 396.0
+offset_bottom = 326.0
+theme_override_styles/field_and_buttons_separator = SubResource("StyleBoxFlat_apdi8")
+min_value = 5.0
+value = 5.0
+
+[node name="btnAgregar" type="Button" parent="canvasObstaculo/panelObstaculo" unique_id=2004474873]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 376.0
+offset_right = 256.0
+offset_bottom = 426.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_cxko2")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_6k6cw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xu8dj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gligv")
+text = "Agregar
+"
+script = ExtResource("12_gtxfl")
+
+[node name="btnCancelar" type="Button" parent="canvasObstaculo/panelObstaculo" unique_id=1098161339]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 376.0
+offset_right = 488.0
+offset_bottom = 426.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_cxko2")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_50ggl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fm5od")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qlvo1")
+text = "Cancelar"
+script = ExtResource("13_c2iri")
+
+[connection signal="body_entered" from="jugador/areaPierna" to="jugador/areaPierna" method="_on_body_entered"]
+[connection signal="body_entered" from="rigidPelota" to="rigidPelota" method="_on_body_entered"]
+[connection signal="pressed" from="canvasDatos/panelDatos/btnCalcular" to="canvasDatos/panelDatos/btnCalcular" method="_on_pressed"]
+[connection signal="pressed" from="canvasDatos/panelDatos/btnReiniciar" to="canvasDatos/panelDatos/btnReiniciar" method="_on_pressed"]
+[connection signal="pressed" from="canvasDatos/panelDatos/btnQuitar" to="canvasDatos/panelDatos/btnQuitar" method="_on_pressed"]
+[connection signal="pressed" from="canvasDatos/panelDatos/btnObstaculo" to="canvasDatos/panelDatos/btnObstaculo" method="_on_pressed"]
+[connection signal="pressed" from="canvasDatos/panelDatos/btnRegresar" to="." method="_on_btn_regresar_pressed"]
+[connection signal="pressed" from="canvasDatos/panelDatos/btnRegresar" to="canvasDatos/panelDatos/btnRegresar" method="_on_pressed"]
+[connection signal="pressed" from="canvasResultados/panelResultados/btnAceptar" to="canvasResultados/panelResultados/btnAceptar" method="_on_pressed"]
+[connection signal="pressed" from="canvasObstaculo/panelObstaculo/btnAgregar" to="canvasObstaculo/panelObstaculo/btnAgregar" method="_on_pressed"]
+[connection signal="pressed" from="canvasObstaculo/panelObstaculo/btnCancelar" to="canvasObstaculo/panelObstaculo/btnCancelar" method="_on_pressed"]
