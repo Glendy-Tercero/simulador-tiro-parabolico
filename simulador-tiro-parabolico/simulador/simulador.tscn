@@ -27,6 +27,8 @@
 [ext_resource type="Script" uid="uid://cy21s4a4uomcr" path="res://simulador/btn_reiniciar.gd" id="19_tocqe"]
 [ext_resource type="Script" uid="uid://dspu2uysdbjw0" path="res://simulador/resultados.gd" id="23_6k6cw"]
 [ext_resource type="Script" uid="uid://dhi8tt2svusjj" path="res://simulador/btn_aceptar.gd" id="24_nfnes"]
+[ext_resource type="Texture2D" uid="uid://b1j44nwvxu8yc" path="res://images/informacion.png" id="28_xu8dj"]
+[ext_resource type="Script" uid="uid://cgjwek0elgekt" path="res://simulador/btn_informacion.gd" id="29_gligv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55go0"]
 size = Vector2(14718.918, 72.97268)
@@ -35,7 +37,7 @@ size = Vector2(14718.918, 72.97268)
 points = PackedVector2Array(82.51228, -56.68567, 116.36351, -23.771362, -16.925781, 27.428467, -42.31421, 53.028442, -57.124123, 53.028442, -67.702484, 43.885742, -67.702484, -9.142822, -59.23977, -18.285767, -16.92572, -18.285767)
 
 [sub_resource type="Animation" id="Animation_o02do"]
-length = 0.43
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -554,10 +556,10 @@ tracks/14/path = NodePath("sombra:position")
 tracks/14/interp = 2
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.7, 2),
+"times": PackedFloat32Array(0, 0.3, 0.7, 2.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-16.92566, 239.54272), Vector2(-67.702515, 239.54272), Vector2(-3.8146973e-05, 239.54272), Vector2(-16.92566, 239.54272)]
+"values": [Vector2(-19.041, 239.543), Vector2(-77.703, 239.543), Vector2(-3.8146973e-05, 239.54272), Vector2(-19.041, 239.543)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -566,10 +568,10 @@ tracks/15/path = NodePath("sombra:scale")
 tracks/15/interp = 2
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.7, 2),
+"times": PackedFloat32Array(0, 0.3, 0.69, 2.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2.1157022, 2.298775), Vector2(1.516, 1.648), Vector2(2.1157022, 2.298775), Vector2(2.1157022, 2.298775)]
+"values": [Vector2(2.1157022, 2.298775), Vector2(1.616, 1.648), Vector2(2.116, 2.399), Vector2(2.1157022, 2.298775)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5fp6u"]
@@ -579,23 +581,106 @@ _data = {
 }
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_lpohk"]
-points = PackedVector2Array(31, 103, 48, -45, 69, -49, 21, -97, 0, -93, 0, 71)
+points = PackedVector2Array(32, 90, 48, -45, 69, -49, 21, -97, 0, -93, 0, 58)
 
 [sub_resource type="Gradient" id="Gradient_o02do"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.50980395)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_daijk"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6k6cw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lpohk"]
-radius = 127.0
+radius = 125.0
+
+[sub_resource type="Animation" id="Animation_gligv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pelota:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.21, 0.217)]
+}
+
+[sub_resource type="Animation" id="Animation_50ggl"]
+resource_name = "animationRebote"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pelota:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.21, 0.217), Vector2(0.18, 0.217), Vector2(0.21, 0.217)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("collisionPelota:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.21, 0.217), Vector2(0.18, 0.217), Vector2(0.21, 0.217)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fm5od"]
+_data = {
+&"RESET": SubResource("Animation_gligv"),
+&"animationRebote": SubResource("Animation_50ggl")
+}
+
+[sub_resource type="Theme" id="Theme_gligv"]
+default_font = ExtResource("4_g8e41")
+default_font_size = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6k6cw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e70xn"]
+bg_color = Color(0, 0.46666667, 0.5254902, 0.3137255)
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.039215688, 0.4862745, 0.56078434, 1)
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xju3a"]
+bg_color = Color(0, 0.21176471, 0.23921569, 0.42745098)
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.039215688, 0.4862745, 0.56078434, 1)
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xu8dj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gmuw"]
+bg_color = Color(0, 0.46666667, 0.5254902, 0.1882353)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.039215688, 0.4862745, 0.56078434, 1)
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxj2g"]
+bg_color = Color(0, 0.21176471, 0.23921569, 0.42745098)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.039215688, 0.4862745, 0.56078434, 1)
+corner_radius_bottom_right = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apdi8"]
 bg_color = Color(0.039215688, 0.4862745, 0.56078434, 1)
 border_color = Color(0.039215688, 0.4862745, 0.56078434, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ue1gd"]
 bg_color = Color(3.5616756e-06, 0.7101644, 0.44982815, 1)
@@ -739,24 +824,42 @@ corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_daijk"]
 bg_color = Color(9.62615e-07, 0.3143082, 0.39490134, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(2.7675182e-07, 0.17362377, 0.2097927, 0.41960785)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+anti_aliasing_size = 6.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tocqe"]
 bg_color = Color(0.9647059, 0.9764706, 0.972549, 0.16862746)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0.27058825)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+corner_detail = 1
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xnni"]
+bg_color = Color(1, 1, 1, 0.8745098)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfnes"]
 bg_color = Color(0.9955804, 0.99558026, 0.99558026, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
+corner_radius_top_left = 5
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6k6cw"]
 bg_color = Color(0, 0.7008032, 0.5399377, 1)
@@ -800,6 +903,17 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gligv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50ggl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ursiy"]
+bg_color = Color(0, 0, 0, 0.22745098)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
 [node name="Control" type="Control" unique_id=198488431]
 layout_mode = 3
 anchors_preset = 15
@@ -814,16 +928,16 @@ script = ExtResource("1_d70ai")
 
 [node name="parallaxCiudad" type="ParallaxLayer" parent="parallaxFondo" unique_id=1388785950]
 texture_repeat = 3
-motion_mirroring = Vector2(1920, 0)
+motion_mirroring = Vector2(1950, 0)
 
 [node name="ciudad" type="Sprite2D" parent="parallaxFondo/parallaxCiudad" unique_id=1161721678]
 texture_repeat = 3
-position = Vector2(960.00006, 409.00006)
-scale = Vector2(0.5818182, 0.52904755)
+position = Vector2(1056, 482.25)
+scale = Vector2(0.64000005, 0.45928574)
 texture = ExtResource("1_lroad")
 
 [node name="staticSuelo" type="StaticBody2D" parent="." unique_id=871207488]
-z_index = -1
+z_index = -3
 position = Vector2(960, 1072)
 script = ExtResource("3_daijk")
 
@@ -843,7 +957,7 @@ position = Vector2(152.00002, 925.00006)
 scale = Vector2(0.47265628, 0.546875)
 
 [node name="sombra" type="Sprite2D" parent="jugador" unique_id=679545109]
-modulate = Color(1, 1, 1, 0.4745098)
+modulate = Color(1, 1, 1, 0.5568628)
 position = Vector2(-16.92566, 239.54272)
 scale = Vector2(2.1157022, 2.298775)
 texture = ExtResource("5_xu8dj")
@@ -898,11 +1012,12 @@ z_index = -1
 position = Vector2(416, 993.5)
 
 [node name="muro" type="Sprite2D" parent="stacticMuro" unique_id=1071976644]
-position = Vector2(14.08, -14.297)
-scale = Vector2(0.17106707, 0.29925767)
+position = Vector2(14.541992, -4.0469418)
+scale = Vector2(0.163, 0.275)
 texture = ExtResource("6_4cvkg")
 
 [node name="collisionMuro" type="CollisionShape2D" parent="stacticMuro" unique_id=361781519]
+position = Vector2(0, 15)
 shape = SubResource("ConvexPolygonShape2D_lpohk")
 disabled = true
 
@@ -919,20 +1034,30 @@ default_color = Color(1, 1, 1, 0)
 gradient = SubResource("Gradient_o02do")
 
 [node name="rigidPelota" type="RigidBody2D" parent="." unique_id=323720981]
-position = Vector2(248, 1032)
-physics_material_override = SubResource("PhysicsMaterial_daijk")
+position = Vector2(248, 1037)
+physics_material_override = SubResource("PhysicsMaterial_6k6cw")
 continuous_cd = 1
 script = ExtResource("12_5fp6u")
 
 [node name="pelota" type="Sprite2D" parent="rigidPelota" unique_id=119469179]
 position = Vector2(1.5258789e-05, 0)
-scale = Vector2(0.24218754, 0.25000012)
+scale = Vector2(0.21, 0.217)
 texture = ExtResource("9_lpohk")
 
 [node name="collisionPelota" type="CollisionShape2D" parent="rigidPelota" unique_id=1837077641]
 position = Vector2(1.5258789e-05, 0)
-scale = Vector2(0.24218754, 0.25000012)
+scale = Vector2(0.21, 0.217)
 shape = SubResource("CircleShape2D_lpohk")
+
+[node name="sombra" type="Sprite2D" parent="rigidPelota" unique_id=602893458]
+modulate = Color(1, 1, 1, 0.5254902)
+z_index = -2
+position = Vector2(1.1014404, 25)
+scale = Vector2(0.25975478, 0.71693903)
+texture = ExtResource("5_xu8dj")
+
+[node name="animationRebote" type="AnimationPlayer" parent="rigidPelota" unique_id=19343364]
+libraries/ = SubResource("AnimationLibrary_fm5od")
 
 [node name="canvasDatos" type="CanvasLayer" parent="." unique_id=2002994790]
 
@@ -969,6 +1094,15 @@ offset_left = 159.0
 offset_top = 154.0
 offset_right = 373.0
 offset_bottom = 200.0
+theme = SubResource("Theme_gligv")
+theme_override_colors/up_icon_modulate = Color(0.09411765, 1, 0.96862745, 1)
+theme_override_colors/down_icon_modulate = Color(0.09411765, 1, 0.96862745, 1)
+theme_override_styles/up_background = SubResource("StyleBoxEmpty_6k6cw")
+theme_override_styles/up_background_hovered = SubResource("StyleBoxFlat_e70xn")
+theme_override_styles/up_background_pressed = SubResource("StyleBoxFlat_xju3a")
+theme_override_styles/down_background = SubResource("StyleBoxEmpty_xu8dj")
+theme_override_styles/down_background_hovered = SubResource("StyleBoxFlat_8gmuw")
+theme_override_styles/down_background_pressed = SubResource("StyleBoxFlat_pxj2g")
 theme_override_styles/field_and_buttons_separator = SubResource("StyleBoxFlat_apdi8")
 min_value = 5.0
 max_value = 85.0
@@ -985,12 +1119,21 @@ theme_override_font_sizes/font_size = 20
 text = "Velocidad
 Inicial"
 
-[node name="spinBoxVO" type="SpinBox" parent="canvasDatos/panelDatos" unique_id=813964209]
+[node name="spinBoxVO" type="SpinBox" parent="canvasDatos/panelDatos" unique_id=1762347804]
 layout_mode = 0
 offset_left = 159.0
 offset_top = 248.0
 offset_right = 373.0
 offset_bottom = 294.0
+theme = SubResource("Theme_gligv")
+theme_override_colors/up_icon_modulate = Color(0.09411765, 1, 0.96862745, 1)
+theme_override_colors/down_icon_modulate = Color(0.09411765, 1, 0.96862745, 1)
+theme_override_styles/up_background = SubResource("StyleBoxEmpty_6k6cw")
+theme_override_styles/up_background_hovered = SubResource("StyleBoxFlat_e70xn")
+theme_override_styles/up_background_pressed = SubResource("StyleBoxFlat_xju3a")
+theme_override_styles/down_background = SubResource("StyleBoxEmpty_xu8dj")
+theme_override_styles/down_background_hovered = SubResource("StyleBoxFlat_8gmuw")
+theme_override_styles/down_background_pressed = SubResource("StyleBoxFlat_pxj2g")
 theme_override_styles/field_and_buttons_separator = SubResource("StyleBoxFlat_apdi8")
 min_value = 5.0
 max_value = 60.0
@@ -1156,11 +1299,15 @@ text = "Velocidad Final: 0 m/s"
 layout_mode = 0
 offset_left = 38.0
 offset_top = 223.0
-offset_right = 252.0
-offset_bottom = 257.0
+offset_right = 214.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(0, 0.47968394, 0.5648359, 1)
 theme_override_fonts/font = ExtResource("3_23q5a")
 theme_override_font_sizes/font_size = 20
-text = "Trayectoria:"
+theme_override_styles/normal = SubResource("StyleBoxFlat_3xnni")
+text = "Trayectoria"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="labelGolpe" type="Label" parent="canvasResultados/panelResultados" unique_id=1211683637]
 visible = false
@@ -1172,7 +1319,7 @@ offset_bottom = 255.0
 theme_override_colors/font_color = Color(0.12833196, 0.7999357, 0.9138464, 1)
 theme_override_fonts/font = ExtResource("3_23q5a")
 theme_override_font_sizes/font_size = 20
-text = "No golpeó el muro"
+text = "Golpeó el muro"
 
 [node name="panelTrayectoria" type="Panel" parent="canvasResultados/panelResultados" unique_id=1916744480]
 clip_contents = true
@@ -1227,7 +1374,7 @@ offset_bottom = 80.0
 theme_override_fonts/font = ExtResource("4_23q5a")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_tocqe")
-text = "Obstaculo"
+text = "Obstáculo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1241,12 +1388,21 @@ theme_override_fonts/font = ExtResource("3_23q5a")
 theme_override_font_sizes/font_size = 20
 text = "Altura del muro"
 
-[node name="spinBoxAltura" type="SpinBox" parent="canvasObstaculo/panelObstaculo" unique_id=262311653]
+[node name="spinBoxAltura" type="SpinBox" parent="canvasObstaculo/panelObstaculo" unique_id=248918581]
 layout_mode = 0
-offset_left = 146.0
+offset_left = 152.0
 offset_top = 156.0
-offset_right = 396.0
-offset_bottom = 206.0
+offset_right = 392.0
+offset_bottom = 208.0
+theme = SubResource("Theme_gligv")
+theme_override_colors/up_icon_modulate = Color(0.09411765, 1, 0.96862745, 1)
+theme_override_colors/down_icon_modulate = Color(0.09411765, 1, 0.96862745, 1)
+theme_override_styles/up_background = SubResource("StyleBoxEmpty_6k6cw")
+theme_override_styles/up_background_hovered = SubResource("StyleBoxFlat_e70xn")
+theme_override_styles/up_background_pressed = SubResource("StyleBoxFlat_xju3a")
+theme_override_styles/down_background = SubResource("StyleBoxEmpty_xu8dj")
+theme_override_styles/down_background_hovered = SubResource("StyleBoxFlat_8gmuw")
+theme_override_styles/down_background_pressed = SubResource("StyleBoxFlat_pxj2g")
 theme_override_styles/field_and_buttons_separator = SubResource("StyleBoxFlat_apdi8")
 min_value = 1.0
 max_value = 20.0
@@ -1262,12 +1418,21 @@ theme_override_fonts/font = ExtResource("3_23q5a")
 theme_override_font_sizes/font_size = 20
 text = "Distancia del muro"
 
-[node name="spinBoxDistancia" type="SpinBox" parent="canvasObstaculo/panelObstaculo" unique_id=1658411531]
+[node name="spinBoxDistancia" type="SpinBox" parent="canvasObstaculo/panelObstaculo" unique_id=1250904889]
 layout_mode = 0
-offset_left = 146.0
-offset_top = 276.0
-offset_right = 396.0
-offset_bottom = 326.0
+offset_left = 152.0
+offset_top = 280.0
+offset_right = 392.0
+offset_bottom = 332.0
+theme = SubResource("Theme_gligv")
+theme_override_colors/up_icon_modulate = Color(0.09411765, 1, 0.96862745, 1)
+theme_override_colors/down_icon_modulate = Color(0.09411765, 1, 0.96862745, 1)
+theme_override_styles/up_background = SubResource("StyleBoxEmpty_6k6cw")
+theme_override_styles/up_background_hovered = SubResource("StyleBoxFlat_e70xn")
+theme_override_styles/up_background_pressed = SubResource("StyleBoxFlat_xju3a")
+theme_override_styles/down_background = SubResource("StyleBoxEmpty_xu8dj")
+theme_override_styles/down_background_hovered = SubResource("StyleBoxFlat_8gmuw")
+theme_override_styles/down_background_pressed = SubResource("StyleBoxFlat_pxj2g")
 theme_override_styles/field_and_buttons_separator = SubResource("StyleBoxFlat_apdi8")
 min_value = 5.0
 value = 5.0
@@ -1305,6 +1470,25 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_qlvo1")
 text = "Cancelar"
 script = ExtResource("13_c2iri")
 
+[node name="canvasInformacion" type="CanvasLayer" parent="." unique_id=637907483]
+
+[node name="btnInformacion" type="Button" parent="canvasInformacion" unique_id=280270744]
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 72.0
+offset_bottom = 64.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/icon_max_width = 40
+theme_override_fonts/font = ExtResource("10_cxko2")
+theme_override_font_sizes/font_size = 35
+theme_override_icons/icon = ExtResource("28_xu8dj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gligv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_50ggl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ursiy")
+icon_alignment = 1
+script = ExtResource("29_gligv")
+
 [connection signal="body_entered" from="jugador/areaPierna" to="jugador/areaPierna" method="_on_body_entered"]
 [connection signal="body_entered" from="rigidPelota" to="rigidPelota" method="_on_body_entered"]
 [connection signal="pressed" from="canvasDatos/panelDatos/btnCalcular" to="canvasDatos/panelDatos/btnCalcular" method="_on_pressed"]
@@ -1316,3 +1500,4 @@ script = ExtResource("13_c2iri")
 [connection signal="pressed" from="canvasResultados/panelResultados/btnAceptar" to="canvasResultados/panelResultados/btnAceptar" method="_on_pressed"]
 [connection signal="pressed" from="canvasObstaculo/panelObstaculo/btnAgregar" to="canvasObstaculo/panelObstaculo/btnAgregar" method="_on_pressed"]
 [connection signal="pressed" from="canvasObstaculo/panelObstaculo/btnCancelar" to="canvasObstaculo/panelObstaculo/btnCancelar" method="_on_pressed"]
+[connection signal="pressed" from="canvasInformacion/btnInformacion" to="canvasInformacion/btnInformacion" method="_on_pressed"]

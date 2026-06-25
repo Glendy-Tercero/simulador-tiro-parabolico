@@ -1,6 +1,7 @@
 extends Control
 
 @onready var rigidPelota = $rigidPelota
+@onready var sombra = $rigidPelota/sombra
 
 @onready var cameraPelota = $cameraPelota
 
@@ -12,6 +13,7 @@ extends Control
 
 @onready var animReposo = $jugador/animationReposo
 @onready var animPatada = $jugador/animationPatada
+@onready var animRebote = $rigidPelota/animationRebote
 
 @onready var collisionSuelo = $staticSuelo/collisionSuelo
 @onready var suelo = $staticSuelo
@@ -31,6 +33,7 @@ extends Control
 @onready var btnRegresar = $canvasDatos/panelDatos/btnRegresar
 @onready var btnAgregar = $canvasObstaculo/panelObstaculo/btnAgregar
 @onready var btnCancelar = $canvasObstaculo/panelObstaculo/btnCancelar
+@onready var btnInformacion = $canvasInformacion/btnInformacion
 
 @onready var muro = $"stacticMuro"
 @onready var collisionMuro = $"stacticMuro/collisionMuro"
@@ -48,7 +51,13 @@ var aterrizo = false
 var en_vuelo = false
 var golpeo_muro = false
 var puntosTrayectoria = []
+const Y_SUELO = 1060
 
+func _process(delta):
+	sombra.global_rotation = 0
+	sombra.global_position.x = rigidPelota.global_position.x
+	sombra.global_position.y = Y_SUELO
+	
 func _ready():
 	lineTrayectoria.top_level = false
 	lineEstela.clear_points()
@@ -143,6 +152,10 @@ func _input(event):
 			btnQuitar._on_pressed()
 		elif btnObstaculo.visible and not btnObstaculo.disabled:
 			btnObstaculo._on_pressed()
+
+	if event.is_action_pressed("ui_i"):
+		if btnInformacion.visible and not btnInformacion.disabled:
+			btnInformacion._on_pressed()
 
 	if event.is_action_pressed("ui_escape"):
 		if btnRegresar.visible and not btnRegresar.disabled:

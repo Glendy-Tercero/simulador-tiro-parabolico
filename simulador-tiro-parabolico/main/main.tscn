@@ -9,6 +9,20 @@
 [ext_resource type="Script" uid="uid://dnduo8bvn1san" path="res://main/btn_salir.gd" id="6_bsumw"]
 [ext_resource type="Texture2D" uid="uid://oggiwthyicl6" path="res://images/volumen.png" id="8_67ri8"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67ri8"]
+bg_color = Color(0, 0, 0, 0.13333334)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0.21960784)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 1
+anti_aliasing_size = 0.01
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqd7i"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 30
@@ -80,15 +94,16 @@ offset_bottom = 1080.0
 
 [node name="labelTitulo" type="Label" parent="." unique_id=384137967]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 156.0
-offset_right = 1856.0
-offset_bottom = 234.0
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 1600.0
+offset_bottom = 232.0
 theme_override_fonts/font = ExtResource("2_4dugh")
 theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_67ri8")
 text = "SIMULADOR DE TIRO PARABÓLICO"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 
 [node name="labelNombre" type="Label" parent="." unique_id=1372740133]
 layout_mode = 0
@@ -105,17 +120,17 @@ vertical_alignment = 1
 
 [node name="panelBotones" type="Panel" parent="." unique_id=673376745]
 layout_mode = 0
-offset_left = 760.0
+offset_left = 752.0
 offset_top = 352.0
-offset_right = 1176.0
+offset_right = 1168.0
 offset_bottom = 736.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqd7i")
 
 [node name="btnEntrar" type="Button" parent="panelBotones" unique_id=1186147511]
 layout_mode = 0
-offset_left = 82.0
+offset_left = 83.0
 offset_top = 72.0
-offset_right = 332.0
+offset_right = 333.0
 offset_bottom = 162.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -129,9 +144,9 @@ script = ExtResource("5_0i4oc")
 
 [node name="btnSalir" type="Button" parent="panelBotones" unique_id=2034000969]
 layout_mode = 0
-offset_left = 82.0
+offset_left = 83.0
 offset_top = 224.0
-offset_right = 332.0
+offset_right = 333.0
 offset_bottom = 314.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)

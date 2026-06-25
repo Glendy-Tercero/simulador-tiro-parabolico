@@ -26,7 +26,7 @@ func _on_pressed() -> void:
 		var copia = control.muro.duplicate()
 		copia.name = "muroCopia" + str(i)
 		copia.position = control.muro.position
-		copia.position.y -= 165 * i
+		copia.position.y -= 150 * i
 		copia.visible = true
 		copia.z_index = -1
 		copia.get_node("collisionMuro").disabled = false

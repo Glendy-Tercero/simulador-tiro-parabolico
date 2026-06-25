@@ -7,7 +7,10 @@ func _ready():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "rigidPelota":
+		
 		Global.patada()
+		control.animRebote.play("animationRebote")
+		
 		control.puntosTrayectoria.clear()
 		control.resetEstela()
 		control.en_vuelo = true

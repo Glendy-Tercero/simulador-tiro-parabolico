@@ -1,0 +1,258 @@
+[gd_scene format=3 uid="uid://bcgjyt4htx12x"]
+
+[ext_resource type="Texture2D" uid="uid://cfpopu2e6uel1" path="res://images/fondo.jpg" id="1_3nvb1"]
+[ext_resource type="FontFile" uid="uid://bhlraixkxu0nm" path="res://fonts/gerasol/GERASOL.ttf" id="2_i5kc2"]
+[ext_resource type="FontFile" uid="uid://ba0obbrhjbs6h" path="res://fonts/gohan_2/Gohan.ttf" id="3_dejbh"]
+[ext_resource type="FontFile" uid="uid://c168tdxvfehj3" path="res://fonts/arena_of_god/ArenaOfGod-Regular.otf" id="4_2dfoc"]
+[ext_resource type="Script" uid="uid://bcomajbvp2j4e" path="res://information/btn_regregar_in.gd" id="5_3nvb1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqd7i"]
+bg_color = Color(0, 0, 0, 0.52156866)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nvb1"]
+bg_color = Color(7.52043e-10, 0.08519363, 0.010974076, 0.40784314)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0.27058825)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 1
+anti_aliasing_size = 0.01
+
+[sub_resource type="FontVariation" id="FontVariation_3nvb1"]
+variation_embolden = 0.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otrg7"]
+bg_color = Color(0.9816753, 0.363833, 0.31805938, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0h8po"]
+bg_color = Color(0.98039216, 0.3647059, 0.31764707, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tv7ag"]
+bg_color = Color(0.43827727, 0, 0.089494534, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Control" type="Control" unique_id=972331925]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+
+[node name="fondo" type="Sprite2D" parent="." unique_id=429157432]
+position = Vector2(960, 488)
+scale = Vector2(0.64000005, 0.59625)
+texture = ExtResource("1_3nvb1")
+
+[node name="panelTiro" type="Panel" parent="." unique_id=673376745]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1856.0
+offset_bottom = 352.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yqd7i")
+
+[node name="labelTitulo" type="Label" parent="panelTiro" unique_id=384137967]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 20.0
+offset_right = 1216.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.6401975, 0.9518357, 0.99999994, 1)
+theme_override_fonts/font = ExtResource("2_i5kc2")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_3nvb1")
+text = "Tiro Parabólico"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="labelDescripcion" type="Label" parent="panelTiro" unique_id=1372740133]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 117.0
+offset_right = 1768.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_dejbh")
+theme_override_font_sizes/font_size = 23
+text = "El tiro parabólico es el movimiento que hace un objeto cuando es lanzado con cierta velocidad y ángulo. La trayectoria que sigue 
+forma una curva, como una parábola, por eso recibe ese nombre.
+
+Este tipo de movimiento se puede ver en la vida real en cosas como un balón de fútbol, una pelota de básquet o cualquier objeto
+lanzado al aire."
+
+[node name="panelSimulador" type="Panel" parent="." unique_id=1051449857]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 384.0
+offset_right = 944.0
+offset_bottom = 664.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yqd7i")
+
+[node name="labelTitulo" type="Label" parent="panelSimulador" unique_id=200348775]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 18.0
+offset_right = 816.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0.7084392, 0.9887584, 0.87335324, 1)
+theme_override_fonts/font = ExtResource("2_i5kc2")
+theme_override_font_sizes/font_size = 35
+text = "🕹️ Sobre el Simulador"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="labelDescripcion" type="Label" parent="panelSimulador" unique_id=808680299]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 90.0
+offset_right = 840.0
+offset_bottom = 243.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_dejbh")
+theme_override_font_sizes/font_size = 23
+text = "En este simulador se asume que:
+
+- Las medidas se expresan en metros y segundos
+- No hay resistencia del aire
+- La gravedad es constante
+- El movimiento es ideal, como en los ejercicios de física."
+
+[node name="panelFormulas" type="Panel" parent="." unique_id=1783812318]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 384.0
+offset_right = 1856.0
+offset_bottom = 664.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yqd7i")
+
+[node name="labelTitulo" type="Label" parent="panelFormulas" unique_id=1003026974]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 17.0
+offset_right = 816.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.7084392, 0.9887584, 0.87335324, 1)
+theme_override_fonts/font = ExtResource("2_i5kc2")
+theme_override_font_sizes/font_size = 35
+text = "📐 Fórmulas básicas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="labelHorizontal" type="Label" parent="panelFormulas" unique_id=193477482]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 108.0
+offset_right = 408.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_dejbh")
+theme_override_font_sizes/font_size = 23
+text = "Movimiento horizontal"
+horizontal_alignment = 1
+
+[node name="labelVertical" type="Label" parent="panelFormulas" unique_id=2077229767]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 110.0
+offset_right = 792.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_dejbh")
+theme_override_font_sizes/font_size = 23
+text = "Movimiento vertical"
+horizontal_alignment = 1
+
+[node name="richVertical" type="RichTextLabel" parent="panelFormulas" unique_id=1422783581]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 157.0
+offset_right = 792.0
+offset_bottom = 205.0
+theme_override_fonts/normal_font = SubResource("FontVariation_3nvb1")
+theme_override_font_sizes/normal_font_size = 27
+text = " y = v₀ sen(θ) t - ½ gt²"
+horizontal_alignment = 1
+
+[node name="richHorizontal" type="RichTextLabel" parent="panelFormulas" unique_id=852255863]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 156.0
+offset_right = 408.0
+offset_bottom = 204.0
+theme_override_fonts/normal_font = SubResource("FontVariation_3nvb1")
+theme_override_font_sizes/normal_font_size = 27
+text = "x = v₀ cos(θ) t"
+horizontal_alignment = 1
+
+[node name="panelMuro" type="Panel" parent="." unique_id=620058558]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 696.0
+offset_right = 1856.0
+offset_bottom = 880.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yqd7i")
+
+[node name="labelTitulo" type="Label" parent="panelMuro" unique_id=839855557]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 21.0
+offset_right = 1728.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0.7084392, 0.9887584, 0.87335324, 1)
+theme_override_fonts/font = ExtResource("2_i5kc2")
+theme_override_font_sizes/font_size = 35
+text = "🧱 Sobre el obstáculo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="labelDescripcion" type="Label" parent="panelMuro" unique_id=970768815]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 96.0
+offset_right = 1767.0
+offset_bottom = 161.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_dejbh")
+theme_override_font_sizes/font_size = 23
+text = "El muro es solo una referencia para practicar los cálculos. Puede que no sea 100% preciso en todos los casos debido a la escala
+del simulador, pero sirve para ver si el proyectil alcanza cierta altura o no."
+
+[node name="btnRegregarIn" type="Button" parent="." unique_id=2034000969]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 960.0
+offset_right = 256.0
+offset_bottom = 1026.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_2dfoc")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_otrg7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0h8po")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tv7ag")
+text = "Regresar"
+script = ExtResource("5_3nvb1")
+
+[connection signal="pressed" from="btnRegregarIn" to="btnRegregarIn" method="_on_pressed"]
